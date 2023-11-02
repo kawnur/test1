@@ -14,11 +14,18 @@
 class Element : public QWidget {
 
     Q_OBJECT
+    Q_PROPERTY(bool isPressed READ readIsPressed WRITE writeIsPressed NOTIFY isPresseChanged)
+
+signals:
+    void isPresseChanged(bool);
 
 public:
     Element();
     Element(QString&, QString&);
     ~Element() = default;
+
+    bool readIsPressed();
+    void writeIsPressed(bool);
 
     void setName(QString&);
     QString getName();
@@ -31,6 +38,8 @@ public:
     void print();
 
 private:
+    bool isPressedValue;
+
     QString name_;
     QString description_;
 
@@ -46,6 +55,8 @@ private:
     QPushButton* removeButton_;
 
     void setStructure();
+    void mousePressEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*);
 
 };
 

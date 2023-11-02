@@ -29,6 +29,7 @@ private:
     static Manager* instance_;
 
     Manager();
+    void initialize();
 
     std::vector<Element*> elements_;
 

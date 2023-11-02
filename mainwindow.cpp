@@ -28,14 +28,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     verticalLayout = new QVBoxLayout();
     topHorizontalLayout = new QHBoxLayout();
+    topHorizontalLayout->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     topHorizontalLayout->setSpacing(5);
     bottomHorizontalLayout = new QHBoxLayout();
+    bottomHorizontalLayout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     bottomHorizontalLayout->setSpacing(5);
 
     mainWidget->setLayout(verticalLayout);
 
     buttons = new QWidget();
-    buttons->setObjectName("buttons");
+    buttons->setObjectName("buttons");    
     buttons->setLayout(topHorizontalLayout);
 
     elements = new QWidget();
@@ -50,7 +52,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // apply styles from .qss file
     QFile file("default.qss");
-
     file.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(file.readAll());
     setStyleSheet(styleSheet);
@@ -87,6 +88,9 @@ void MainWindow::refreshElements() {  // TODO add call to modifying functions
     this->elements = new QWidget;
     this->elements->setObjectName("elements");
     this->bottomHorizontalLayout = new QHBoxLayout;
+    bottomHorizontalLayout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    bottomHorizontalLayout->setSpacing(5);
+
     this->elements->setLayout(this->bottomHorizontalLayout);
     this->verticalLayout->addWidget(this->elements);
 

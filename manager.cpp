@@ -12,9 +12,25 @@ Manager* Manager::instance() {
 }
 
 Manager::Manager() {
-    auto element = new Element();
-    elements_.push_back(element);
-    elements_.back()->setObjectName("element");
+    initialize();
+}
+
+void Manager::initialize() {
+    std::vector<QString> init {
+        "Lampovaya1", "ip: 192.168.1.101",
+        "Lampovaya2", "ip: 192.168.1.102",
+        "Lampovaya3", "ip: 192.168.1.103"
+    };
+
+    int i = 0;
+
+    while(i < (int)init.size()) {
+        auto name = init.at(i++);
+        auto description = init.at(i++);
+        auto element = new Element(name, description);
+        elements_.push_back(element);
+        elements_.back()->setObjectName("element");
+    }
 }
 
 void Manager::fillElements(QLayout* layout) {
