@@ -1,0 +1,43 @@
+QWidget#buttons {
+    background-color: #727878;
+    border-color: black;
+    margin-color: black;
+    max-height: 40px;
+    subcontrol-position: left top;
+}
+
+QPushButton#addButton, QPushButton#refreshButton {
+    color: black;
+    /*border-color: red;*/
+    border: 2px solid;
+    /*border-style: solid;*/
+    max-width: 70px;
+    max-height: 20px;
+    position: absolute;
+    /*left: 2px;
+    right: 2px;*/
+    left: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+QWidget#elements {
+    background-color: #eff3f3;
+    spacing: 10;
+    subcontrol-origin: content;
+    subcontrol-position: left top;
+}
+
+Element#element {
+    color: red;
+    background-color: yellow;
+    selection-color: blue;
+    selection-background-color: grey;
+    alternate-background-color: black;
+    max-width: 200px;
+    max-height: 150px;
+}
+
+Element#element > QLabel {
+    color: black;
+}
