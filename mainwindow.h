@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     static MainWindow* instance();
 
-    QHBoxLayout* getBottomHorizontalLayout();
+    QHBoxLayout* getBottomHorizontalLayout() const;
 
     ~MainWindow();
 

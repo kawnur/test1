@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent)
     setStyleSheet(styleSheet);
 }
 
-QHBoxLayout* MainWindow::getBottomHorizontalLayout() {
+QHBoxLayout* MainWindow::getBottomHorizontalLayout() const {
     return this->bottomHorizontalLayout;
 }
 

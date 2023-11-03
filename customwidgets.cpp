@@ -18,7 +18,7 @@ Element::Element(QString& name, QString& description) :
     setStructure();
 };
 
-bool Element::readIsPressed() {
+bool Element::readIsPressed() const {
     return this->isPressedValue;
 }
 
@@ -32,7 +32,7 @@ void Element::setName(QString& name) {
     this->nameLabel_->setText(this->name_);
 }
 
-QString Element::getName() {
+QString Element::getName() const {
     return this->name_;
 }
 
@@ -41,7 +41,7 @@ void Element::setDescription(QString& description) {
     this->descriptionLabel_->setText(this->description_);
 }
 
-QString Element::getDescription() {
+QString Element::getDescription() const {
     return this->description_;
 }
 
@@ -55,7 +55,7 @@ void Element::remove() {
     manager->removeElement(this);
 }
 
-void Element::print() {
+void Element::print() const {
     std::cout << this->name_.toStdString() << " "
               << this->description_.toStdString() << std::endl;
 }

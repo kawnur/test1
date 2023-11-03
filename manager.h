@@ -23,7 +23,7 @@ public:
 
     ~Manager() = default;
 
-    void printElements();
+    void printElements() const;
 
 private:
     static Manager* instance_;

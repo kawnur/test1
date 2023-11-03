@@ -84,7 +84,7 @@ void Manager::addElement() {
     dialog->show();
 }
 
-void Manager::printElements() {
+void Manager::printElements() const {
     for(auto& element : this->elements_) {
         element->print();
     }

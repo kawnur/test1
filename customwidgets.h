@@ -24,18 +24,18 @@ public:
     Element(QString&, QString&);
     ~Element() = default;
 
-    bool readIsPressed();
+    bool readIsPressed() const;
     void writeIsPressed(bool);
 
     void setName(QString&);
-    QString getName();
+    QString getName() const;
     void setDescription(QString&);
-    QString getDescription();
+    QString getDescription() const;
 
     void edit();
     void remove();
 
-    void print();
+    void print() const;
 
 private:
     bool isPressedValue;
