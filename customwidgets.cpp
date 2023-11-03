@@ -1,3 +1,4 @@
+#include <QFont>
 #include <QFormLayout>
 #include <QPushButton>
 #include <QStyle>
@@ -71,6 +72,10 @@ void Element::setStructure() {
 
     nameLabel_ = new QLabel(this->name_);
     nameLabel_->setAlignment(Qt::AlignCenter);
+    auto font = new QFont;
+    font->setBold(true);
+    font->setPointSize(15);
+    nameLabel_->setFont(*font);
     nameLabel_->setObjectName("nameLabel");
 
     descriptionLabel_ = new QLabel(this->description_);

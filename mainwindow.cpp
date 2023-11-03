@@ -21,23 +21,26 @@ MainWindow::MainWindow(QWidget *parent)
 {
 //    ui->setupUi(this);
 
+    layout()->setSpacing(0);
+    layout()->setContentsMargins(0, 0, 0, 0);
+
     Manager* manager = Manager::instance();
 
     mainWidget = new QWidget(this);
     setCentralWidget(mainWidget);
 
     verticalLayout = new QVBoxLayout();
+    verticalLayout->setSpacing(0);
+    verticalLayout->setContentsMargins(0, 0, 0, 0);
     topHorizontalLayout = new QHBoxLayout();
     topHorizontalLayout->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    topHorizontalLayout->setSpacing(5);
     bottomHorizontalLayout = new QHBoxLayout();
     bottomHorizontalLayout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    bottomHorizontalLayout->setSpacing(5);
 
     mainWidget->setLayout(verticalLayout);
 
     buttons = new QWidget();
-    buttons->setObjectName("buttons");    
+    buttons->setObjectName("buttons");
     buttons->setLayout(topHorizontalLayout);
 
     elements = new QWidget();

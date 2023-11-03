@@ -8,35 +8,20 @@ QWidget#buttons {
 
 QPushButton#addButton, QPushButton#refreshButton {
     color: black;
-    /*border-color: red;*/
     border: none;
-    /*border-style: solid;*/
     max-width: 70px;
     max-height: 20px;
-    position: absolute;
-    /*left: 2px;
-    right: 2px;*/
-    left: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
 }
 
 QWidget#elements {
     background-color: #eff3f3;
-    spacing: 10;
-    subcontrol-origin: content;
-    subcontrol-position: left top;
 }
 
 Element#element {
-    color: red;
     border: none;
     background-color: #cdcdcd;
-    selection-color: blue;
-    selection-background-color: grey;
-    alternate-background-color: black;
-    min-width: 150px;
-    min-height: 100px;
+    width: 150px;
+    height: 80px;
 }
 
 Element#element:hover {
@@ -49,10 +34,6 @@ Element#element:hover {
 
 Element#element[isPressed="true"] {
     background-color: #a4adb2;
-}
-
-Element#element > QWidget > QLabel#nameLabel {
-    font-size: 50px;
 }
 
 Element#element > QWidget > QPushButton {
