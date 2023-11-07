@@ -84,7 +84,7 @@ void MainWindow::setElements() {
     manager->fillElements(this->bottomHorizontalLayout);
 }
 
-void MainWindow::refreshElements() {  // TODO add call to modifying functions
+void MainWindow::refreshElements() {
     // bad solution
     auto oldElements = this->elements;
 
@@ -101,7 +101,6 @@ void MainWindow::refreshElements() {  // TODO add call to modifying functions
 
     delete oldElements;
 }
-
 
 MainWindow::~MainWindow()
 {

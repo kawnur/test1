@@ -18,6 +18,8 @@ public:
 
     QHBoxLayout* getBottomHorizontalLayout() const;
 
+    void refreshElements();
+
     ~MainWindow();
 
 private:
@@ -39,7 +41,6 @@ private:
     void setButtons();
     void setElements();
 
-    void refreshElements();
 };
 
 #endif // MAINWINDOW_H

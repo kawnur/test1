@@ -33,6 +33,11 @@ void Manager::initialize() {
     }
 }
 
+void Manager::refreshMainWindow() {
+    MainWindow* mainWindow = MainWindow::instance();
+    mainWindow->refreshElements();
+}
+
 void Manager::fillElements(QLayout* layout) {
     for(auto& element : this->elements_) {
         element->print();
@@ -45,6 +50,7 @@ void Manager::createElement(QString& name, QString& description) {
     elements_.push_back(new Element(name, description));
     elements_.back()->setObjectName("element");
     this->printElements();
+    this->refreshMainWindow();
 }
 
 void Manager::resetElement(Element* element) {
@@ -59,6 +65,7 @@ void Manager::removeElement(Element* element) {
     for(auto it = this->elements_.begin(); it != this->elements_.end(); it++) {
         if(*it == element) {
             this->elements_.erase(it);
+            this->refreshMainWindow();
             return;
         }
     }

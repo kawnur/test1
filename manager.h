@@ -30,6 +30,7 @@ private:
 
     Manager();
     void initialize();
+    void refreshMainWindow();
 
     std::vector<Element*> elements_;
 

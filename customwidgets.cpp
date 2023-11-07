@@ -87,8 +87,10 @@ void Element::setStructure() {
     buttonField_->setLayout(buttonFieldLayout_);
 
     editButton_ = new QPushButton("Edit");
+    setAttribute(Qt::WA_StyledBackground);
     connect(editButton_, &QPushButton::clicked, this, &Element::edit);
     removeButton_ = new QPushButton("Delete");
+    setAttribute(Qt::WA_StyledBackground);
     connect(removeButton_, &QPushButton::clicked, this, &Element::remove);
 
     buttonFieldLayout_->addWidget(editButton_);
@@ -160,6 +162,9 @@ ResetElementDialog::ResetElementDialog(QString& title, Element* element) {
     title_ = title;
     setWindowTitle(title_);
     element_ = element;
+
+    this->nameLineEdit_->insert(this->element_->getName());
+    this->desriptionLineEdit_->insert(this->element_->getDescription());
 
     connect(this->buttonBox, &QDialogButtonBox::accepted, this, &ResetElementDialog::sendData);
 }

@@ -38,6 +38,7 @@ Element#element[isPressed="true"] {
 
 Element#element > QWidget > QPushButton {
     color: black;
+    background-color: #cdcdcd;
     border: none;
     max-width: 50px;
     max-height: 20px;
@@ -45,4 +46,12 @@ Element#element > QWidget > QPushButton {
     left: 2px;
     padding-left: 2px;
     padding-right: 2px;
+}
+
+Element#element > QWidget > QPushButton:hover {
+    background-color: #a6a2a2;
+}
+
+Element#element > QWidget > QPushButton:pressed {
+    background-color: #616161;
 }
